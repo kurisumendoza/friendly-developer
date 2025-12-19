@@ -4,6 +4,13 @@ import type { Project } from '~/types';
 import ProjectCard from '~/components/ProjectCard';
 import Pagination from '~/components/Pagination';
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: 'The Friendly Dev | Projects' },
+    { name: 'description', content: 'My website project portfolio' },
+  ];
+}
+
 export async function loader({
   request,
 }: Route.LoaderArgs): Promise<{ projects: Project[] }> {
